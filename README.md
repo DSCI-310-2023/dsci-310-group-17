@@ -1,6 +1,12 @@
 # DSCI 310 Group 17
-<br>
-**Arman Moztarzadeh, Eric Liu, Ryan Lee, Matthew Gillies**
+Authors: Arman Moztarzadeh, Eric Liu, Ryan Lee, Matthew Gillies
+
+## About
+
+TODO
+
+## Report
+The analysis report can be found [here](https://github.com/erliuu/dsci-310-group-17/blob/main/analysis.ipynb)
 
 ## Teamwork Contract
 ### Expectations
