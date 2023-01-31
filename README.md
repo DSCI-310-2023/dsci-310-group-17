@@ -1,11 +1,14 @@
 # DSCI 310 Group 17
 DSCI 310: Teamwork Contract
-Arman Moztarzadeh, Eric Liu, Ryan Lee, Matthew Gillies
+<br>
+**Arman Moztarzadeh, Eric Liu, Ryan Lee, Matthew Gillies**
 
 ## Expectations
 The time expected for group members to work on DSCI 310 will be a maximum of 6 hours unless all the team members agree to lengthen the time expected. If team members cannot complete their sections within the maximum hours, members should give notice on Slack at least 24 hours before the group submission date (Saturday 6am) to see if work should be redistributed or if the expected time should be increased.
+<br>
 All submissions are expected to meet the criteria of the milestones as set out in the instructions. This includes making sure all scripts are working, creating tests for all your functions, and using proper grammar in written submissions.
-Meetings
+
+## Meetings
 Official meeting times were established during the initial team meeting held on 2023-01-31. Meetings will be held after DSCI 310 Lecture (Tues) weekly from 10:30am - 12:00pm. All members must notify if they are unable to attend at least 1 hourbefore.
 
 ## Communication
