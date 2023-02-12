@@ -19,9 +19,11 @@ When contributing to our project, please follow these guidelines:
 
 - Respect the Code of Conduct and ensure that your contributions align with the project's values and objectives.
 
-- Before contributing, please search the repository to ensure that there is a not a duplicate issue or pull request that has already been created
+- Before contributing, please search the repository to ensure that there is a not a duplicate issue or pull request that has  been created
 
 - Use clear and concise language in your contributions.
+
+- Be open to recieving feedback and suggestions from other members
 
 ## Getting Help
 If you have any questions or need help contributing to our project, please contact the repository maintainers. We are happy to help and are committed to making our project a welcoming and inclusive community for everyone.
