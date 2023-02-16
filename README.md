@@ -1,4 +1,4 @@
-# DSCI 310 Group 17
+# Hypothyroid Disease Classification
 Authors: Arman Moztarzadeh, Eric Liu, Ryan Lee, Matthew Gillies
 
 ## About
