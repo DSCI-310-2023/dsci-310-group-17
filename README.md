@@ -1,4 +1,4 @@
-# Hypothyroid Disease Classification
+# Hyperthyroid Disease Classification
 Authors: Arman Moztarzadeh, Eric Liu, Ryan Lee, Matthew Gillies
 
 ## About
