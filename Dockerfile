@@ -1,3 +1,3 @@
 FROM jupyter/scipy-notebook:ubuntu-22.04
 
-RUN conda install numpy=1.24.2
+RUN conda install seaborn=0.12.2
