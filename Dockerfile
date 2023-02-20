@@ -1,5 +1,4 @@
-# Group 17 Dockerfile
-FROM docker pull jupyter/scipy-notebook
+FROM jupyter/scipy-notebook:ubuntu-22.04
 
 RUN conda install --yes -c conda-forge numpy=1.24.2
 RUN conda install --yes -c conda-forge matplotlib=3.7.0
