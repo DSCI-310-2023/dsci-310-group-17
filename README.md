@@ -8,7 +8,6 @@ Hyperthyroidism is an issue that occurs when the thyroid gland makes more thyroi
 The full report can be found [here](https://github.com/erliuu/dsci-310-group-17/blob/main/analysis.ipynb)
 
 ## Usage
-### Method 1 - For those that want to run with jupyter lab interactively
 1. Clone the GitHub repositry onto your local computer.
 2. Navigate to the root of the project directory.
 3. In your terminal, run the following command:
@@ -21,8 +20,8 @@ jupyter lab
 
 
 ## Dependencies
-- R version 4.2.2 & Jupyterlab 3.6.1
-- Docker Base Image: jupyter/scipy-notebook:ubuntu-22.04
+R version 4.2.2 & Jupyterlab 3.6.1
+Docker Base Image: jupyter/scipy-notebook:ubuntu-22.04
 
 Our list of dependencies with the package and version number can be found below:
 | Package  | Version |
