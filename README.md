@@ -8,12 +8,17 @@ Hyperthyroidism is an issue that occurs when the thyroid gland makes more thyroi
 The full report can be found [here](https://github.com/erliuu/dsci-310-group-17/blob/main/analysis.ipynb)
 
 ## Usage
-The Docker environment can be built from the provided Dockerfile in this repository or pulled directly from Dockerhub [here](https://hub.docker.com/repository/docker/erliuu/dsci-310-group-17).
+### Method 1 - For those that want to run with jupyter lab interactively
+1. Clone the GitHub repositry onto your local computer.
+2. Navigate to the root of the project directory.
+3. In your terminal, run the following command:
+
 ```
 docker pull erliuu/dsci-310-group-17
 docker run -it --rm erliuu/dsci-310-group-17:latest
 jupyter lab
 ```
+
 
 ## Dependencies
 - R version 4.2.2 & Jupyterlab 3.6.1
