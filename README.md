@@ -33,6 +33,7 @@ docker run --rm -p 8888:8888 \
 
 ## Dependencies
 R version 4.2.2 & Jupyterlab 3.6.1
+
 Docker Base Image: jupyter/scipy-notebook:ubuntu-22.04
 
 Our list of dependencies with the package and version number can be found below:
