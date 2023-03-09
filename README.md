@@ -8,16 +8,28 @@ Hyperthyroidism is an issue that occurs when the thyroid gland makes more thyroi
 The full report can be found [here](https://github.com/erliuu/dsci-310-group-17/blob/main/analysis.ipynb)
 
 ## Usage
-1. Clone the GitHub repositry onto your local computer.
-2. Navigate to the root of the project directory.
-3. In your terminal, run the following command:
+### Method 1 - Running jupyter lab to reproduce analysis without edit permissions
+1. Clone this GitHub repository onto your local computer.
+2. Ensure that your terminal is in the root of the project.
+3. Run the following command:
 
 ```
-docker pull erliuu/dsci-310-group-17
-docker run -it --rm erliuu/dsci-310-group-17:latest
-jupyter lab
+docker run --rm -p 8888:8888 \
+    -v /$(pwd):/home/joyvan/dsci-310-group-17 \
+    erliuu/dsci-310-group-17:latest \
+    jupyter nbconvert --to notebook --execute dsci-310-group-17/analysis.ipynb
 ```
-
+### Method 2 - Running with jupyter lab interactively with ability to edit project
+1. Clone this GitHub repository onto your local computer.
+2. Ensure that your terminal is in the root of the project.
+3. Run the following command:
+```
+docker run --rm -p 8888:8888 \
+    -v /$(pwd):/home/joyvan/dsci-310-group-17 \
+    erliuu/dsci-310-group-17:latest \
+```
+4. Once you have run the command, copy the URL that will come up that looks something like http://127.0.0.1:8888/lab?token=... into your web browser.
+5. You may now run the entire analysis in the file analysis.ipynb.
 
 ## Dependencies
 R version 4.2.2 & Jupyterlab 3.6.1
