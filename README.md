@@ -23,6 +23,7 @@ The first command first pulls the image from DockerHub, then the second creates 
 
 4. Once you have run the commands, copy the URL that will come up that looks something like [http://127.0.0.1:8888/lab?token=<token>](http://127.0.0.1:8888/lab?token=) into your web browser.
 5. Once in JupyterLab, you can nagivate to analysis.ipynb and run the entire analysis.
+6. Make sure to navigate to Kernel and click "Restart Kernal and Run All Cells" to ensure reproducibility.
 
 ## Dependencies
 R version 4.2.2 & Jupyterlab 3.6.1
