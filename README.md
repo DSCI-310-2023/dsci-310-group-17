@@ -22,9 +22,7 @@ docker run --rm -p 8888:8888 \
 The first command first pulls the image from DockerHub, then the second creates and starts a new container from the downloaded image.
 
 4. Once you have run the commands, copy the URL that will come up that looks something like [http://127.0.0.1:8888/lab?token=<token>](http://127.0.0.1:8888/lab?token=) into your web browser.
-5. Once in JupyterLab, you should be in an empty directory. Open the 'work' folder.
-6. Then open the project folder "dsci-310-group-17" and run the Jupyter Notebook.
-7. You can also navigate to analysis.ipynb in Jupyter lab and run the entire analysis.
+5. Once in JupyterLab, you can nagivate to analysis.ipynb and run the entire analysis.
 
 ## Dependencies
 R version 4.2.2 & Jupyterlab 3.6.1
