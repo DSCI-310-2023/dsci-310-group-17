@@ -1,15 +1,7 @@
-import pytest
 import sys
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
 
-sys.path.append('./../src/')
-from CleanData import relabel_bclass, col_dtype_reformat
-from AnalysisVisualizations import visualize_classification
-from EDA import plot_correlations
-
+sys.path.append('src')
+from clean_data import relabel_bclass, col_dtype_reformat
 
 def test_relabel_bclass():
     # Create Sample DataFrame
@@ -39,8 +31,4 @@ def test_col_dtype_reformat():
     # Assert the columns are casted to the correct dtypes
     assert((post_df[num_cols].dtypes == np.float64).all())
     assert((post_df[cat_cols].dtypes == 'category').all())
-
-#def test_visualize_classification():
-
-
-#def test_plot_correlations
+    assert((post_df['num3'].dtypes == np.int64).all())
