@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import seaborn as sn
 
+
 def plot_correlations(data):
     """
     Takes in the cleaned dataset, selects only numerical features, and then calculates 
@@ -11,7 +12,7 @@ def plot_correlations(data):
     data: (pd.DataFrame) -> the dataset in which correlations are to be produced from
 
     Returns
-	----------
+    ----------
     heatmap: Heatmap visualizing the correlations of numeric features
     """
     print("Figure 1: Correlations of numeric features")
