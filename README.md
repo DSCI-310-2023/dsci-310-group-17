@@ -25,6 +25,12 @@ The first command first pulls the image from DockerHub, then the second creates 
 5. Once in JupyterLab, you can nagivate to analysis.ipynb and run the entire analysis.
 6. Make sure to navigate to Kernel and click "Restart Kernal and Run All Cells" to ensure reproducibility.
 
+## PyTest
+To confirm that functions run as intended run the following command on the terminal:
+```
+python3 -m pytest 
+```
+
 ## Dependencies
 R version 4.2.2 & Jupyterlab 3.6.1
 
