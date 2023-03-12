@@ -12,9 +12,10 @@ def visualize_classification(data, preds):
 
     Returns
     ----------
-    plot: Scatterplot visualizing the classifications of the data points
+    fig: Scatterplot object visualizing the classifications of the data points
     """
-    plot = plt.scatter(data["TSH"], data["TT4"], c=preds, s=50, cmap='viridis')
+    fig = plt.figure()
+    plt.scatter(data["TSH"], data["TT4"], c=preds, s=50, cmap='viridis')
     plt.xlabel("TSH concentration")
     plt.ylabel("TT4 concentration")
-    return plt.show(plot)
+    return fig

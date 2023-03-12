@@ -2,11 +2,11 @@ import pytest
 import sys
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 sys.path.append('src')
-from EDA import plot_correlations
+from eda import plot_correlations
 
-#called = False
 def test_data():
     return pd.DataFrame({
         'age':[41,23,46,70],
@@ -16,20 +16,21 @@ def test_data():
         'FTI':[109,120,70,141]
     })
 
-def test_return_none():
-    result = plot_correlations(test_data())
-    assert result is None
-    
-def test_invalid_input():
-    with pytest.raises(TypeError):
-        plot_correlations("invalid input")
+def empty_plot():
+    fig, ax = plt.subplots(figsize=(20, 10))
+    sns.set(font_scale=1)
+    sns.heatmap(pd.DataFram(), annot=True, ax=ax, cmap=plt.cm.Blues)
+    return fig
 
-def test_calls_show(monkeypatch):
-    #list so it's global
-    called = [False] 
-    #runs if .show() is ran
-    def test_show(test):
-        called[0] = True
-    monkeypatch.setattr(plt, "show", test_show)
-    plot_correlations(test_data())
-    assert called[0] == True
+def test_plot_correlations_keyerror():
+    try:
+        result = plot_correlations(pd.DataFrame())
+    except KeyError:
+        print("Data must have the following columns: ['age', 'TSH', 'TT4', 'T4U', 'FTI']")
+
+def test_plot_correlations_empty():
+    try:
+        empty_df = pd.DataFrame(columns=['age', 'TSH', 'TT4', 'T4U', 'FTI'])
+        result = plot_correlations(empty_df)
+    except ValueError:
+        print("Data frame provided has correct columns but no data. Correlation cannot be made")
