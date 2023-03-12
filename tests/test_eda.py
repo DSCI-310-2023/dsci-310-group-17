@@ -4,7 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 sys.path.append('src')
-from EDA import plot_correlations
+from eda import plot_correlations
 
 #called = False
 def test_data():
