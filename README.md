@@ -15,8 +15,8 @@ The full report can be found [here](https://github.com/erliuu/dsci-310-group-17/
 docker pull erliuu/dsci-310-group-17
 ```
 ```
-docker run --rm -it -p 8888:8888 \
-    -v ${pwd}:/home/joyvan/work \
+docker run --rm -p 8888:8888 \
+    -v /$(pwd):/home/joyvan/dsci-310-group-17 \
     erliuu/dsci-310-group-17:latest
 ```
 - **Note**: Sometimes `${pwd}` does not work. Simply replace with the full path to the repository directory. Ex. `/home/eric1126/DSCI_310/test-dsci-310-group-17`
