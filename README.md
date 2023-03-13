@@ -15,8 +15,8 @@ The full report can be found [here](https://github.com/erliuu/dsci-310-group-17/
 docker pull erliuu/dsci-310-group-17
 ```
 ```
-docker run --rm -p 8888:8888 \
-    -v /$(pwd):/home/joyvan/dsci-310-group-17 \
+docker run --rm -it -p 8888:8888 \
+    -v ${pwd}:/home/joyvan/work \
     erliuu/dsci-310-group-17:latest
 ```
 The first command first pulls the image from DockerHub, then the second creates and starts a new container from the downloaded image.
