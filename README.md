@@ -19,6 +19,8 @@ docker run --rm -it -p 8888:8888 \
     -v ${pwd}:/home/joyvan/work \
     erliuu/dsci-310-group-17:latest
 ```
+- **Note**: Sometimes `${pwd}` does not work. Simply replace with the full path to the repository directory. Ex. `/home/eric1126/DSCI_310/test-dsci-310-group-17`
+
 The first command first pulls the image from DockerHub, then the second creates and starts a new container from the downloaded image.
 
 4. Once you have run the commands, copy the URL that will come up that looks something like [http://127.0.0.1:8888/lab?token=<token>](http://127.0.0.1:8888/lab?token=) into your web browser.
