@@ -1,0 +1,32 @@
+---
+title:
+author: "Matthew Gillies, Ryan Lee, Eric Liu, Arman Moztarzadeh"
+output:
+    bookdown::html_document2:
+        toc: true
+        toc_depth: 2
+    bookdown::pdf_document2:
+        toc: true
+        toc_depth: 2
+    github_document:
+        toc: true
+
+bibliography: references.bib
+---
+
+```
+{r load-lib, include=FALSE, message=FALSE}
+library(tidyverse)
+```
+
+# Introduction
+
+# Methods and Results
+
+# Exploring Dataset
+
+# Classification Analysis
+
+# Conclusion
+
+# References
