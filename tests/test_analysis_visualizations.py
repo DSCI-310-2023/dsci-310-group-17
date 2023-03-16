@@ -16,16 +16,26 @@ def test_data():
         'FTI':[109,120,70,141]
     })
 
-def test_visualize_classification_returns_none():
-    result = visualize_classification(test_data(), np.random.randint(low=0, high = 2, size = (4,)))
-    assert result is None
+def empty_plot():
+    fig = plt.figure()
+    plt.scatter(pd.DataFrame(), pd.DataFrame(), c=np.empty(0), s=50, cmap='viridis')
+    plt.xlabel("TSH concentration")
+    plt.ylabel("TT4 concentration")
+    return fig
 
-def test_visualize_classification_calls_show(monkeypatch):
-    #list so it's global
-    called = [False] 
-    #runs if .show() is ran
-    def test_show(test):
-        called[0] = True
-    monkeypatch.setattr(plt, "show", test_show)
-    visualize_classification(test_data(), np.random.randint(low=0, high = 2, size = (4,)))
-    assert called[0] == True
+def test_visualize_classification_keyerror():
+    try:
+        result = visualize_classification(pd.DataFrame(), np.random.randint(low=0, high = 2, size = (4,)))
+    except KeyError:
+        print("Column TSH and/or TT4 do not exist")
+
+def test_visualize_classification_axeslabels():
+    result = visualize_classification(test_data(), np.random.randint(low=0, high = 2, size = (4,)))
+    assert(result.get_axes()[0].get_xlabel() == 'TSH concentration')
+    assert(result.get_axes()[0].get_ylabel() == 'TT4 concentration')
+
+def test_visualize_classification_empty():
+    empty_df = pd.DataFrame(columns=['age', 'TSH', 'TT4', 'T4U', 'FTI'])
+    result = visualize_classification(empty_df, np.empty(0))
+    assert(result.show() == empty_plot().show())
+

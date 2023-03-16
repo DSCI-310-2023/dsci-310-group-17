@@ -7,29 +7,31 @@ Hyperthyroidism is an issue that occurs when the thyroid gland makes more thyroi
 ## Report
 The full report can be found [here](https://github.com/erliuu/dsci-310-group-17/blob/main/analysis.ipynb)
 
-## Usage
-### Method 1 - Running jupyter lab to reproduce analysis without edit permissions
+## Usage - Running with Docker
 1. Clone this GitHub repository onto your local computer.
-2. Ensure that your terminal is in the root of the project.
-3. Run the following command:
+2. Open your terminal and navigate to the root of this repository using the command ``` cd <folder name or path to project>```
+3. Run the following commands: 
+```
+docker pull erliuu/dsci-310-group-17
+```
+```
+docker run --rm -p 8888:8888 \
+    -v /$(pwd):/home/joyvan/dsci-310-group-17 \
+    erliuu/dsci-310-group-17:latest
+```
+- **Note**: Sometimes `${pwd}` does not work. Simply replace with the full path to the repository directory. Ex. `/home/eric1126/DSCI_310/test-dsci-310-group-17`
 
+The first command first pulls the image from DockerHub, then the second creates and starts a new container from the downloaded image.
+
+4. Once you have run the commands, copy the URL that will come up that looks something like [http://127.0.0.1:8888/lab?token=<token>](http://127.0.0.1:8888/lab?token=) into your web browser.
+5. Once in JupyterLab, you can nagivate to analysis.ipynb and run the entire analysis.
+6. Make sure to navigate to Kernel and click "Restart Kernal and Run All Cells" to ensure reproducibility.
+
+## PyTest
+To confirm that functions run as intended run the following command on the terminal:
 ```
-docker run --rm -p 8888:8888 \
-    -v /$(pwd):/home/joyvan/dsci-310-group-17 \
-    erliuu/dsci-310-group-17:latest \
-    jupyter nbconvert --to notebook --execute dsci-310-group-17/analysis.ipynb
+python3 -m pytest 
 ```
-### Method 2 - Running with jupyter lab interactively with ability to edit project
-1. Clone this GitHub repository onto your local computer.
-2. Ensure that your terminal is in the root of the project.
-3. Run the following command:
-```
-docker run --rm -p 8888:8888 \
-    -v /$(pwd):/home/joyvan/dsci-310-group-17 \
-    erliuu/dsci-310-group-17:latest \
-```
-4. Once you have run the command, copy the URL that will come up that looks something like http://127.0.0.1:8888/lab?token=... into your web browser.
-5. You may now run the entire analysis in the file analysis.ipynb.
 
 ## Dependencies
 R version 4.2.2 & Jupyterlab 3.6.1
