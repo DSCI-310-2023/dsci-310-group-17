@@ -28,7 +28,7 @@ def main(input_path, output_folder):
     ax.yaxis.set_visible(False)
     table(ax, hyper_clean.describe(), rowLabels=['']*hyper_clean.describe().shape[0], loc='center')
     plt.savefig(output_folder + "/data_described.png", bbox_inches="tight")
- 
+    hyper_clean.describe().to_csv(output_folder + "/data_described.csv")
 
     plot_correlations(hyper_clean).savefig(output_folder + "/correlation_of_numeric_features.png", bbox_inches='tight')
 
@@ -75,7 +75,8 @@ def main(input_path, output_folder):
     ax.yaxis.set_visible(False)
     table(ax, pd.DataFrame(confusion_matrix(y_test, test_preds)), rowLabels=['']*pd.DataFrame(confusion_matrix(y_test, test_preds)).shape[0], loc='center')
     plt.savefig(output_folder + "/confusion_matrix.png", bbox_inches="tight")
-        
+    pd.DataFrame(confusion_matrix(y_test, test_preds)).to_csv(output_folder + "/confusion_matrix.csv")  
+
 if __name__ == "__main__":
     parse = argparse.ArgumentParser(description="Creates ans saves figures from clean data")
     parse.add_argument("file_path", help = "Path to clean data file")
