@@ -11,25 +11,37 @@ from sklearn.compose import make_column_transformer
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from sklearn.metrics import accuracy_score, confusion_matrix
 from sklearn.pipeline import make_pipeline
-
 from pandas.plotting import table
 
 def main(input_path, output_folder):
-    hyper_clean = pd.read_csv(input_path)
+    """
+    Creates figures and tabes based on clean data. 
+    Stores them at the given input folder
 
+    Parameters
+    ----------
+    input_path: (string) -> path to clean data
+
+    output_path: (string) -> stores figures and CSVs to this file
+    
+    Returns
+    ----------
+    None
+    """
+    hyper_clean = pd.read_csv(input_path)
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
 
 
 
-    #plot data description
+    #save and plot data description to png
     ax = plt.subplot(111, frame_on = False)
     ax.xaxis.set_visible(False)
     ax.yaxis.set_visible(False)
     table(ax, hyper_clean.describe(), rowLabels=['']*hyper_clean.describe().shape[0], loc='center')
     plt.savefig(output_folder + "/data_described.png", bbox_inches="tight")
     hyper_clean.describe().to_csv(output_folder + "/data_described.csv")
-
+    #save data description to csv/dataframe
     plot_correlations(hyper_clean).savefig(output_folder + "/correlation_of_numeric_features.png", bbox_inches='tight')
 
 
@@ -69,13 +81,21 @@ def main(input_path, output_folder):
     visualize_classification(X_test, test_preds).savefig(output_folder + "/TSH_vs_TT4_concentration_test_set", bbox_inches='tight')
 
 
-    #plot confusion matrix
+    #save and plot confusion matrix to png
     ax = plt.subplot(111, frame_on = False)
     ax.xaxis.set_visible(False)
     ax.yaxis.set_visible(False)
     table(ax, pd.DataFrame(confusion_matrix(y_test, test_preds)), rowLabels=['']*pd.DataFrame(confusion_matrix(y_test, test_preds)).shape[0], loc='center')
     plt.savefig(output_folder + "/confusion_matrix.png", bbox_inches="tight")
+    #save confusion matrix to dataframe/csv
     pd.DataFrame(confusion_matrix(y_test, test_preds)).to_csv(output_folder + "/confusion_matrix.csv")  
+
+    #save accuracy score to txt file
+    score = accuracy_score(train_preds, y_train)
+    f = open(output_folder + '/accuracy_score.txt','w')
+    f.write('{}'.format(round(score, 3)))
+    f.close()
+
 
 if __name__ == "__main__":
     parse = argparse.ArgumentParser(description="Creates ans saves figures from clean data")

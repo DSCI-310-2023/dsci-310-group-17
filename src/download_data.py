@@ -3,6 +3,20 @@ import urllib.request
 import argparse
 
 def main(url, output_path):
+    """
+    Downloads a file online based on the URL given and saves it to
+    a specified output path
+
+    Parameters
+    ----------
+    url: (string) -> Link to download from
+
+    output_path: (string) -> Stores the dataframe/csv at this path
+    
+    Returns
+    ----------
+    None
+    """
     try:
         urllib.request.urlretrieve(url, output_path)
     except urllib.error.HTTPError as error:
