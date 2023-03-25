@@ -3,7 +3,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import os
 from analysis_visualizations import visualize_classification
-from eda import plot_correlations
 from sklearn.model_selection import train_test_split, cross_validate
 from sklearn.linear_model import LogisticRegression
 from sklearn.compose import make_column_transformer
@@ -15,7 +14,7 @@ from pandas.plotting import table
 def main(input_path, output_folder):
     """
     Creates figures and tabes based on clean data. 
-    Stores them at the given input folder
+    Stores them at the given output folder
 
     Parameters
     ----------
@@ -31,18 +30,7 @@ def main(input_path, output_folder):
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
 
-    # save and plot data description to png
-    ax = plt.subplot(111, frame_on = False)
-    ax.xaxis.set_visible(False)
-    ax.yaxis.set_visible(False)
-    table(ax, hyper_clean.describe(), rowLabels=['']*hyper_clean.describe().shape[0], loc='center')
-    desc = hyper_clean.describe()
-    hyper_clean.describe().to_csv(output_folder + "/data_described.csv")
-    #save data description to csv/dataframe
-    plot_correlations(hyper_clean).savefig(output_folder + "/correlation_of_numeric_features.png", bbox_inches='tight')
-
-
-
+    
     # model training & analysis
     # Splitting data
     X = hyper_clean.drop(columns="binaryClass")
