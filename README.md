@@ -51,7 +51,7 @@ Our list of dependencies with the package and version number can be found below:
 | numpy  | 1.24.2 |
 | pandas  | 1.5 |
 | seaborn | 0.12.2 |
-| jupyter-book  | 0.14.0 |
+| jupyter-book  | 0.15.1 |
 | py-test  | 7.2.2 |
 
 ## License
