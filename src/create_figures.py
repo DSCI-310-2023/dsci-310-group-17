@@ -12,6 +12,7 @@ from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from sklearn.metrics import accuracy_score, confusion_matrix
 from sklearn.pipeline import make_pipeline
 from pandas.plotting import table
+import dataframe_image as dfi
 
 def main(input_path, output_folder):
     """
@@ -39,7 +40,8 @@ def main(input_path, output_folder):
     ax.xaxis.set_visible(False)
     ax.yaxis.set_visible(False)
     table(ax, hyper_clean.describe(), rowLabels=['']*hyper_clean.describe().shape[0], loc='center')
-    plt.savefig(output_folder + "/data_described.png", bbox_inches="tight")
+    desc = hyper_clean.describe()
+    dfi.export(desc, output_folder + "/data_described.png")
     hyper_clean.describe().to_csv(output_folder + "/data_described.csv")
     #save data description to csv/dataframe
     plot_correlations(hyper_clean).savefig(output_folder + "/correlation_of_numeric_features.png", bbox_inches='tight')
