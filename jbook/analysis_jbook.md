@@ -41,9 +41,9 @@ Studies have shown that within the population, certain groups are more predispos
 ### Data-Cleaning
 To begin this analysis we read in the data from the original source, merging **solely** for pre-processing. The `binaryClass` feature is manipulated so that all values are either positive or negative, removing all other diagnoses. Next, we replaced all `?` values with `NaN` values, and removed all columns that were irrelevant to our classification model or had an extremely large amount of `NaN` values. We then remove all of the remaining rows with NA values from the data set. Since all of the columns are of datatype `Object`, they are converted to their respective data-types (either numeric or categorical). Following this we converted the `binaryClass` column from character values ("P" and "N") to the reverse in boolean integer values ("0" and "1" respectively) to match the classification model. In this data set positive labels actually represented a negative diagnosis.
 
-<br>
+
 ### Exploratory Data Analysis
-After data-cleaning we preformed exploratory data analysis (EDA) through summary statistics, correlations of numeric features, and value counts for the entire data set.
+After data-cleaning we preformed exploratory data analysis (EDA) through summary statistics, correlations of numeric features (shown in [Figure 1](correlation)), and value counts for the entire data set.
 
 We get the following column descriptions and information from the data:
 ```
@@ -95,9 +95,9 @@ Correlation of Numeric Features
 
 +++
 
-<br>
+
 ### Model Training
-We split the data into training and testing set with a 70/30 split, while also separating the `binaryClass` feature (**target**) from the rest of the data set. Following this a `ColumnTransformer` was created to scale all numeric variables and one-hot-encode all categorical variables to ensure they are in a state that the model can process. The `ColumnTransformer` was then fitted and transformed on the training set, along with transforming the test set. We then performed cross-validation with a LogisticRegression model on the training data, which returned an average validation score of 98%. Applying the model again to the full training set, we again produced a 98% accuracy score. Furthermote, we visualized the training predictions with `TSH` and `TT4` concentrations on the x and y axes respectively. Finally, **The model was applied to the test set, which produced a 99% accuracy**.
+We split the data into training and testing set with a 70/30 split, while also separating the `binaryClass` feature (**target**) from the rest of the data set. Following this a `ColumnTransformer` was created to scale all numeric variables and one-hot-encode all categorical variables to ensure they are in a state that the model can process. The `ColumnTransformer` was then fitted and transformed on the training set, along with transforming the test set. We then performed cross-validation with a LogisticRegression model on the training data, which returned an average validation score of 98%. Applying the model again to the full training set, we again produced a 98% accuracy score. Furthermore, we visualized the training predictions with `TSH` and `TT4` concentrations on the x and y axes respectively in [Figure 2](TSH-vs-TT4-train). Finally, **The model was applied to the test set, which produced a 99% accuracy**.
 
 +++
 
@@ -115,7 +115,7 @@ TSH vs TT4 concentration with classified points for the training set
 TSH vs TT4 concentration with classified points for the test set
 :::
 
-Another plot visualizing the class predictions were created along with a confusion matrix to realize the impact of the predictions. From the confusion matrix we can see that most of our incorrect predictions are false negatives, which are not preferable as an incorrect positive disease diagnose would have less consequential impact than an incorrectly predicting some as disease free.
+Another plot visualizing the class predictions ([Figure 3](TSH-vs-TT4-test)) were created along with a confusion matrix to realize the impact of the predictions. From the confusion matrix ([Figure 4](confusion-matrix)) we can see that most of our incorrect predictions are false negatives, which are not preferable as an incorrect positive disease diagnose would have less consequential impact than an incorrectly predicting some as disease free.
 
 +++
 
