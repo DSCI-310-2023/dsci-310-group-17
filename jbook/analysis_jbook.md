@@ -16,8 +16,6 @@ kernelspec:
 
 +++ {"user_expressions": []}
 
-```{tableofcontents}
-```
 
 
 +++
@@ -28,9 +26,9 @@ In this report, we trained a classifier to predict the presence of hyperthyroidi
 +++
 
 ## Introduction
-The **Thyroid Disease dataset** obtained from the **UCI Machine Learning Repository** will be used to predict the presence of hyperthyroidism. Hyperthyroidism is an issue that occurs when the thyroid gland produces an excess amount of thyroid hormones (De Leo et al., 2016). As a result, the body's metabolism greatly "speeds up", resulting in weight loss, rapid heartbeat, fatigue, shaky hands, sweating, and more (U.S. Department of Health and Human Services, n.d.). 
+The **Thyroid Disease dataset** obtained from the **UCI Machine Learning Repository** will be used to predict the presence of hyperthyroidism. Hyperthyroidism is an issue that occurs when the thyroid gland produces an excess amount of thyroid hormones {cite}`Deleo2016`. As a result, the body's metabolism greatly "speeds up", resulting in weight loss, rapid heartbeat, fatigue, shaky hands, sweating, and more {cite}`USDept`. 
 <br>
-Studies have shown that within the population, certain groups are more predisposed to getting hyperthyroidism. Hyperthyroidism is more common in women, women who were recently pregnant, those with type 1 or type 2 diabetes, alongside other factors (Allahabadia, 2000). In order to help predict whether someone has hyperthyroidism, we are using 19 attributes provided from the Thyroid Disease dataset. The attributes we are using are age, sex, if they take medication for thyroid disease (thyroxine or antithyroid medication), pregnant status, prior treatment for thyroid disease (thyroid surgery or Ii131 radiotherapy for hyperthyroidism), and amount of different hormones in the body (TSH, TT4, T4U, and FTI). **With these factors, we are hoping to make an accurate classifier in to predict whether or not someone has hyperthyroidism.**
+Studies have shown that within the population, certain groups are more predisposed to getting hyperthyroidism. Hyperthyroidism is more common in women, women who were recently pregnant, those with type 1 or type 2 diabetes, alongside other factors {cite}`Allahabadia2000`. In order to help predict whether someone has hyperthyroidism, we are using 19 attributes provided from the Thyroid Disease dataset. The attributes we are using are age, sex, if they take medication for thyroid disease (thyroxine or antithyroid medication), pregnant status, prior treatment for thyroid disease (thyroid surgery or Ii131 radiotherapy for hyperthyroidism), and amount of different hormones in the body (TSH, TT4, T4U, and FTI). **With these factors, we are hoping to make an accurate classifier in to predict whether or not someone has hyperthyroidism.**
 
 +++
 
@@ -128,14 +126,13 @@ Confusion Matrix for the classifier with 0 as negative and 1 as positive
 +++ {"user_expressions": []}
 
 ## Discussion
-The model we trained has a 98% accuracy when tested on a test set. As we were provided by a plethora of measurements specific to thyroid hormones tied to hyperthyroidism, we expected to be able to train a classifier with a high level of accuracy. We believe that this model could act as a further test to backup a doctor's medical opinion for hyperthyroidism. Additionally, due to the lower analysis cost of prediction, this could potentially be an easy resource for people to self-test for the disease. Currently, there are at-home thyroid tests you can administer to measure thyroid hormone levels. By lowering the barrier of entry, more potential hyperthyroidism patients can detect their diseases early on instead of waiting for a medical appointment. A future project could be to model hyperthyroidism disease progression over time. Thyroid hormone levels exist on a spectrum, and simply saying someone has hyperthyroidism or hypothyroidism is severely oversimplifying the disease. Additionally, other projects could look if the dataset holds out in a modern setting. The dataset was published in 1987 and it has been studied that hyperthyroidism increased between 1987 and 1995 due to an increase in salt in food {cite}`Mostbeck et al., 1998`.
+The model we trained has a 98% accuracy when tested on a test set. As we were provided by a plethora of measurements specific to thyroid hormones tied to hyperthyroidism, we expected to be able to train a classifier with a high level of accuracy. We believe that this model could act as a further test to backup a doctor's medical opinion for hyperthyroidism. Additionally, due to the lower analysis cost of prediction, this could potentially be an easy resource for people to self-test for the disease. Currently, there are at-home thyroid tests you can administer to measure thyroid hormone levels. By lowering the barrier of entry, more potential hyperthyroidism patients can detect their diseases early on instead of waiting for a medical appointment. A future project could be to model hyperthyroidism disease progression over time. Thyroid hormone levels exist on a spectrum, and simply saying someone has hyperthyroidism or hypothyroidism is severely oversimplifying the disease. Additionally, other projects could look if the dataset holds out in a modern setting. The dataset was published in 1987 and it has been studied that hyperthyroidism increased between 1987 and 1995 due to an increase in salt in food {cite}`Mostbeck1998`.
 
 +++
 
 ## Bibliography
 
 +++ {"user_expressions": []}
-
 ```{bibliography}
 ```
 
