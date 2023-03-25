@@ -60,7 +60,7 @@ Summary Statistics of the dataframe
 +++
 
 :::{figure-md} correlation
-<img src="../results/correlation_of_numeric_features.png" width = "1000px" height = "300px">
+<img src="../results/correlation_of_numeric_features.png" width = "500px" height = "300px">
 
 Correlation of Numeric Features
 :::
@@ -72,7 +72,7 @@ Correlation of Numeric Features
 +++
 
 :::{figure-md} TSH-vs-TT4-train
-<img src="../results/TSH_vs_TT4_concentration_training_set.png" width = "1000px" height = "300px">
+<img src="../results/TSH_vs_TT4_concentration_training_set.png" width = "500px" height = "500px">
 
 TSH vs TT4 concentration with classified points for the training set
 :::
@@ -80,7 +80,7 @@ TSH vs TT4 concentration with classified points for the training set
 +++
 
 :::{figure-md} TSH-vs-TT4-test
-<img src="../results/TSH_vs_TT4_concentration_test_set.png" width = "1000px" height = "300px">
+<img src="../results/TSH_vs_TT4_concentration_test_set.png" width = "500px" height = "500px">
 
 TSH vs TT4 concentration with classified points for the test set
 :::
@@ -88,7 +88,7 @@ TSH vs TT4 concentration with classified points for the test set
 +++
 
 :::{figure-md} confusion-matrix
-<img src="../results/confusion_matrix.png" width = "1000px" height = "300px">
+<img src="../results/confusion_matrix.png" width = "400px" height = "400px">
 
 Confusion Matrix for the classifier with 0 as negative and 1 as positive
 :::
