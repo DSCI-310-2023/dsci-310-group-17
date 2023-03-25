@@ -1,6 +1,5 @@
 import argparse
 import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
 import os
 from analysis_visualizations import visualize_classification
@@ -9,10 +8,9 @@ from sklearn.model_selection import train_test_split, cross_validate
 from sklearn.linear_model import LogisticRegression
 from sklearn.compose import make_column_transformer
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
-from sklearn.metrics import accuracy_score, confusion_matrix
+from sklearn.metrics import accuracy_score, confusion_matrix, ConfusionMatrixDisplay
 from sklearn.pipeline import make_pipeline
 from pandas.plotting import table
-import dataframe_image as dfi
 
 def main(input_path, output_folder):
     """
@@ -33,22 +31,19 @@ def main(input_path, output_folder):
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
 
-
-
-    #save and plot data description to png
+    # save and plot data description to png
     ax = plt.subplot(111, frame_on = False)
     ax.xaxis.set_visible(False)
     ax.yaxis.set_visible(False)
     table(ax, hyper_clean.describe(), rowLabels=['']*hyper_clean.describe().shape[0], loc='center')
     desc = hyper_clean.describe()
-    dfi.export(desc, output_folder + "/data_described.png")
     hyper_clean.describe().to_csv(output_folder + "/data_described.csv")
     #save data description to csv/dataframe
     plot_correlations(hyper_clean).savefig(output_folder + "/correlation_of_numeric_features.png", bbox_inches='tight')
 
 
 
-    #model training & analysis
+    # model training & analysis
     # Splitting data
     X = hyper_clean.drop(columns="binaryClass")
     y = hyper_clean['binaryClass']
@@ -83,16 +78,15 @@ def main(input_path, output_folder):
     visualize_classification(X_test, test_preds).savefig(output_folder + "/TSH_vs_TT4_concentration_test_set", bbox_inches='tight')
 
 
-    #save and plot confusion matrix to png
-    ax = plt.subplot(111, frame_on = False)
-    ax.xaxis.set_visible(False)
-    ax.yaxis.set_visible(False)
-    table(ax, pd.DataFrame(confusion_matrix(y_test, test_preds)), rowLabels=['']*pd.DataFrame(confusion_matrix(y_test, test_preds)).shape[0], loc='center')
+    # save and plot confusion matrix to png
+    cm = confusion_matrix(y_test, test_preds)
+    disp = ConfusionMatrixDisplay(cm, display_labels=[True, False]).plot()
+    plt.grid(False)
     plt.savefig(output_folder + "/confusion_matrix.png", bbox_inches="tight")
     #save confusion matrix to dataframe/csv
-    pd.DataFrame(confusion_matrix(y_test, test_preds)).to_csv(output_folder + "/confusion_matrix.csv")  
+    pd.DataFrame(cm).to_csv(output_folder + "/confusion_matrix.csv")
 
-    #save accuracy score to txt file
+    # save accuracy score to txt file
     score = accuracy_score(train_preds, y_train)
     f = open(output_folder + '/accuracy_score.txt','w')
     f.write('{}'.format(round(score, 3)))
@@ -103,7 +97,6 @@ if __name__ == "__main__":
     parse = argparse.ArgumentParser(description="Creates ans saves figures from clean data")
     parse.add_argument("file_path", help = "Path to clean data file")
     parse.add_argument("output_path", help = "Filename to save ")
-    
     arg = parse.parse_args()
     main(arg.file_path, arg.output_path)
 

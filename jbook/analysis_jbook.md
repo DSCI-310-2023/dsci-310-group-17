@@ -51,14 +51,6 @@ We split the data into training and testing set with a 70/30 split, while also s
 
 +++
 
-:::{figure-md} data-described
-<img src="../results/data_described.png" width = "1000px" height = "300px">
-
-Summary Statistics of the dataframe
-:::
-
-+++
-
 :::{figure-md} correlation
 <img src="../results/correlation_of_numeric_features.png" width = "500px" height = "300px">
 
