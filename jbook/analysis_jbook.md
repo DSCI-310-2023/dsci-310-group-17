@@ -39,15 +39,51 @@ Studies have shown that within the population, certain groups are more predispos
 +++
 
 ### Data-Cleaning
-To begin this analysis we read in the data from the original source, merging **solely** for pre-processing. The `binaryClass` feature is manipulated so that all values are either positive or negative, removing all other diagnoses. Next, we replace all `?` values with `NaN` values, and removed all columns that were irrelevant to our classification model or had an extremely large amount of `NaN` values. We then remove all of the remaining rows with NA values from the data set. Since all of the columns are of datatype `Object`, they are converted to their respective data-types (either numeric or categorical). Following this we converted the `binaryClass` column from character values ("P" and "N") to the reverse in boolean integer values ("0" and "1" respectively) to match the classification model. In this data set positive labels actually represented a negative diagnosis.
+To begin this analysis we read in the data from the original source, merging **solely** for pre-processing. The `binaryClass` feature is manipulated so that all values are either positive or negative, removing all other diagnoses. Next, we replaced all `?` values with `NaN` values, and removed all columns that were irrelevant to our classification model or had an extremely large amount of `NaN` values. We then remove all of the remaining rows with NA values from the data set. Since all of the columns are of datatype `Object`, they are converted to their respective data-types (either numeric or categorical). Following this we converted the `binaryClass` column from character values ("P" and "N") to the reverse in boolean integer values ("0" and "1" respectively) to match the classification model. In this data set positive labels actually represented a negative diagnosis.
+
+<br>
 ### Exploratory Data Analysis
-After data-cleaning we preformed exploratory data analysis (EDA) through summary statistics, correlations of numeric features, and value counts for the entire data set. 
-### Model Training
-We split the data into training and testing set with a 70/30 split, while also separating the `binaryClass` feature (**target**) from the rest of the data set. Following this a `ColumnTransformer` was created to scale all numeric variables and one-hot-encode all categorical variables to ensure they are in a state that the model can process. The `ColumnTransformer` was then fitted and transformed on the training set, along with transforming the test set. We then performed cross-validation with a LogisticRegression model on the training data, which returned an average validation score of 98%. Applying the model again to the full training set, we again produced a 98% accuracy score. Furthermote, we visualized the training predictions with `TSH` and `TT4` concentrations on the x and y axes respectively. Finally, **The model was applied to the test set, which produced a 99% accuracy**. Another plot visualizing the class predictions were created along with a confusion matrix to realize the impact of the predictions. From the confusion matrix we can see that most of our incorrect predictions are false negatives, which are not preferable as an incorrect positive disease diagnose would have less consequential impact than an incorrectly predicting some as disease free.
+After data-cleaning we preformed exploratory data analysis (EDA) through summary statistics, correlations of numeric features, and value counts for the entire data set.
 
-+++
-
-## Exploratory Data Analysis
+We get the following column descriptions and information from the data:
+```
+Data columns (total 21 columns):
+ #   Column                     Non-Null Count  Dtype   
+---  ------                     --------------  -----   
+ 0   age                        3085 non-null   float64 
+ 1   sex                        3085 non-null   category
+ 2   on thyroxine               3085 non-null   category
+ 3   query on thyroxine         3085 non-null   category
+ 4   on antithyroid medication  3085 non-null   category
+ 5   sick                       3085 non-null   category
+ 6   pregnant                   3085 non-null   category
+ 7   thyroid surgery            3085 non-null   category
+ 8   I131 treatment             3085 non-null   category
+ 9   query hypothyroid          3085 non-null   category
+ 10  query hyperthyroid         3085 non-null   category
+ 11  lithium                    3085 non-null   category
+ 12  goitre                     3085 non-null   category
+ 13  tumor                      3085 non-null   category
+ 14  hypopituitary              3085 non-null   category
+ 15  psych                      3085 non-null   category
+ 16  TSH                        3085 non-null   float64 
+ 17  TT4                        3085 non-null   float64 
+ 18  T4U                        3085 non-null   float64 
+ 19  FTI                        3085 non-null   float64 
+ 20  binaryClass                3085 non-null   category
+```
+```
+                age          TSH          TT4          T4U         FTI
+count  3085.000000  3085.000000  3085.000000  3085.000000  3085.00000
+mean     52.821718     4.982172   108.694814     0.995246   110.31154
+std      20.099428    23.975905    35.763281     0.194844    32.79471
+min       1.000000     0.005000     2.000000     0.250000     2.00000
+25%      37.000000     0.480000    88.000000     0.880000    93.00000
+50%      55.000000     1.300000   104.000000     0.980000   107.00000
+75%      68.000000     2.600000   125.000000     1.080000   124.00000
+max     455.000000   530.000000   430.000000     2.320000   395.00000
+ 
+```
 
 +++
 
@@ -59,7 +95,9 @@ Correlation of Numeric Features
 
 +++
 
-## Model Training and Analysis
+<br>
+### Model Training
+We split the data into training and testing set with a 70/30 split, while also separating the `binaryClass` feature (**target**) from the rest of the data set. Following this a `ColumnTransformer` was created to scale all numeric variables and one-hot-encode all categorical variables to ensure they are in a state that the model can process. The `ColumnTransformer` was then fitted and transformed on the training set, along with transforming the test set. We then performed cross-validation with a LogisticRegression model on the training data, which returned an average validation score of 98%. Applying the model again to the full training set, we again produced a 98% accuracy score. Furthermote, we visualized the training predictions with `TSH` and `TT4` concentrations on the x and y axes respectively. Finally, **The model was applied to the test set, which produced a 99% accuracy**.
 
 +++
 
@@ -76,6 +114,8 @@ TSH vs TT4 concentration with classified points for the training set
 
 TSH vs TT4 concentration with classified points for the test set
 :::
+
+Another plot visualizing the class predictions were created along with a confusion matrix to realize the impact of the predictions. From the confusion matrix we can see that most of our incorrect predictions are false negatives, which are not preferable as an incorrect positive disease diagnose would have less consequential impact than an incorrectly predicting some as disease free.
 
 +++
 
