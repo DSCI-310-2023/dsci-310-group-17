@@ -8,6 +8,15 @@ sys.path.append('src')
 from eda import plot_correlations
 
 def test_data():
+    """
+    Creates a mock dataframe for testing with a subset of the data
+    Parameters
+    ----------
+    None
+    Returns
+    ----------
+    pd.DataFrame: A mock dataframe with a subset of the data
+    """
     return pd.DataFrame({
         'age':[41,23,46,70],
         'TSH':[1.3, 4.1, 0.98, 0.16],
@@ -17,18 +26,47 @@ def test_data():
     })
 
 def empty_plot():
+    """
+    Creates an empty plot to use for testing
+    Parameters
+    ----------
+    None
+    Returns
+    ----------
+    fig: An empty scatterplot
+    """
     fig, ax = plt.subplots(figsize=(20, 10))
     sns.set(font_scale=1)
     sns.heatmap(pd.DataFram(), annot=True, ax=ax, cmap=plt.cm.Blues)
     return fig
 
 def test_plot_correlations_keyerror():
+    """
+    Tests that data has the correct columns when used as input to plot_correlations
+    Parameters
+    ----------
+    None
+    Returns
+    ----------
+    None if columns are correct, prints "Data must have the following columns: 
+    ['age', 'TSH', 'TT4', 'T4U', 'FTI']" if column names are incorrect
+    """
     try:
         result = plot_correlations(pd.DataFrame())
     except KeyError:
         print("Data must have the following columns: ['age', 'TSH', 'TT4', 'T4U', 'FTI']")
 
 def test_plot_correlations_empty():
+    """
+    Tests that data is present when used as input to plot_correlations
+    Parameters
+    ----------
+    None
+    Returns
+    ----------
+    None if data is present in the dataframe, prints "Data frame provided has correct columns but no data. 
+    Correlation cannot be made" if there is not data present in the dataframe
+    """
     try:
         empty_df = pd.DataFrame(columns=['age', 'TSH', 'TT4', 'T4U', 'FTI'])
         result = plot_correlations(empty_df)
