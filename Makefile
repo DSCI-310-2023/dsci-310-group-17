@@ -4,7 +4,7 @@
 # Authors: Arman Moztarzadeh, Eric Liu, Ryan Lee, Matthew Gillies
 
 # Description: Makefile that runs the project's scripts and analysis and generates the report
-all: data/rawdata.csv data/unclean.csv data/hyperthyroid_clean.csv results/data_described.csv results/results.png remove_files
+all: data/rawdata.csv data/unclean.csv data/hyperthyroid_clean.csv results/data_described.csv results/results.png jbook/_build/analysis_jbook.html jbook/_build/analysis_jbook.pdf remove_files
 
 #download data
 data/rawdata.csv: src/download_data.py
