@@ -37,13 +37,7 @@ remove_files: src/remove_files.py
 	python3 src/remove_files.py data/raw2.csv
 	python3 src/remove_files.py data/unclean.csv
 
-
-
-
-#TODO create script that deletes temporary files (data/raw1.csv, data/raw2.csv)
-
-
-# clean:
-# 		rm -rf data/*.csv
-# 		rm -rf results
-# 		rm -rf doc/hyperthyroidism.html doc/hyperthyroidism.pdf
+clean:
+	rm -rf jbook/_build/html/*
+	rm -rf results
+	rm -rf data/*.csv
