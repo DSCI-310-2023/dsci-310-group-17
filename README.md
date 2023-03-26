@@ -27,11 +27,9 @@ The first command first pulls the image from DockerHub, then the second creates 
 4. Once you have run the commands, copy the URL that will come up that looks something like [http://127.0.0.1:8888/lab?token=<token>](http://127.0.0.1:8888/lab?token=) into your web browser.
 5. Once in JupyterLab, there are different versions of the analysis you can view and run
     - **To run the jupyter-book** (Main Report copy):
-        - Navigate to the root of the repository and run enter `make` onto the command line. This will generate the report in publication quality in both HTML and PDF versions.
+        - Navigate to the root of the repository and run enter `make all` onto the command line. This will generate the report in publication quality in HTML.
         - **The HTML** will be located at `jbook/_build/analysis_jbook.html`
-        - **The PDF** will be located at `jbook/_build/analysis_jbook.pdf`
         - All generated files will be located in the `results/` directory
-    - **To run the jupyter-notebook** (Includes analysis and data cleaning code), you can navigate to `analysis.ipynb` and run the entire analysis.
 6. Make sure to navigate to Kernel and click "Restart Kernal and Run All Cells" to ensure reproducibility.
 
 ## PyTest
