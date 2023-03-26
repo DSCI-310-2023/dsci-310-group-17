@@ -4,7 +4,7 @@
 # Authors: Arman Moztarzadeh, Eric Liu, Ryan Lee, Matthew Gillies
 
 # Description: Makefile that runs the project's scripts and analysis and generates the report
-all: data/rawdata.csv data/unclean.csv data/hyperthyroid_clean.csv results/data_described.csv results/results.png jbook/_build/analysis_jbook.html jbook/_build/analysis_jbook.pdf remove_files
+all: data/rawdata.csv data/unclean.csv data/hyperthyroid_clean.csv results/data_described.csv results/results.png jbook/_build/analysis_jbook.html remove_files
 
 #download data
 data/rawdata.csv: src/download_data.py
@@ -28,10 +28,8 @@ results/results.png: src/create_figures.py
 	python3 src/create_figures.py data/hyperthyroid_clean.csv results
 
 # render Jupyter Book report in HTML and PDF
-jbook/_build/analysis_jbook.html: jbook/_config.yml jbook/_toc.yml jbook/analysis_jbook.ipynb jbook/references.bib
+jbook/_build/analysis_jbook.html: jbook/_config.yml jbook/_toc.yml jbook/analysis_jbook.md jbook/references.bib
 	jb build jbook/
-jbook/_build/analysis_jbook.pdf: jbook/_config.yml jbook/_toc.yml jbook/analysis_jbook.ipynb jbook/references.bib
-	jb build jbook/ --builder pdflatex
 
 #Delete temporary files
 remove_files: src/remove_files.py
