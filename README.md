@@ -5,7 +5,8 @@ Authors: Arman Moztarzadeh, Eric Liu, Ryan Lee, Matthew Gillies
 Hyperthyroidism is an issue that occurs when the thyroid gland makes more thyroid hormones than the body needs (De Leo et al., 2016). The body manages its energy by using thyroid hormones. By having an excessive amount, bodily functions may increase in speed resulting in weight loss, rapid heartbeat, fatigue, shaky hands, sweating, and more (U.S. Department of Health and Human Services, n.d.). The goal of our project is to create a tool to help predict the presence of hyperthyroidism using varying attributes such as age, sex, prior treatment for thyroid disease, and amount of thyroid hormones in the body.
 
 ## Report
-The full report can be found [here](https://github.com/erliuu/dsci-310-group-17/blob/main/analysis.ipynb)
+The JupyterLab analysis for Milestone 1 can be found [here](https://github.com/erliuu/dsci-310-group-17/blob/main/analysis.ipynb) <br />
+The JupyerBook analysis for Milestone 3 can be found by running `make all` and is located at `dsci-310-group-17/jbook/_build/html/index.html`
 
 ## Usage - Running with Docker
 1. Clone this GitHub repository onto your local computer.
@@ -24,7 +25,11 @@ docker run --rm -p 8888:8888 \
 The first command first pulls the image from DockerHub, then the second creates and starts a new container from the downloaded image.
 
 4. Once you have run the commands, copy the URL that will come up that looks something like [http://127.0.0.1:8888/lab?token=<token>](http://127.0.0.1:8888/lab?token=) into your web browser.
-5. Once in JupyterLab, you can nagivate to analysis.ipynb and run the entire analysis.
+5. Once in JupyterLab, there are different versions of the analysis you can view and run
+    - **To run the jupyter-book** (Main Report copy):
+        - Navigate to the root of the repository and run enter `make all` onto the command line. This will generate the report in publication quality in HTML.
+        - **The HTML** will be located at `jbook/_build/analysis_jbook.html`
+        - All generated files will be located in the `results/` directory
 6. Make sure to navigate to Kernel and click "Restart Kernal and Run All Cells" to ensure reproducibility.
 
 ## PyTest
@@ -45,7 +50,7 @@ Our list of dependencies with the package and version number can be found below:
 | numpy  | 1.24.2 |
 | pandas  | 1.5 |
 | seaborn | 0.12.2 |
-| jupyter-book  | 0.14.0 |
+| jupyter-book  | 0.12.1 |
 | py-test  | 7.2.2 |
 
 ## License
