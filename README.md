@@ -30,7 +30,9 @@ The first command first pulls the image from DockerHub, then the second creates 
         - Navigate to the root of the repository and run enter `make all` onto the command line. This will generate the report in publication quality in HTML.
         - **The HTML** will be located at `jbook/_build/analysis_jbook.html`
         - All generated files will be located in the `results/` directory
+        - To remove all files in the `results/` directory in order to reset the analysis, run `make clean` on the command line
 6. Make sure to navigate to Kernel and click "Restart Kernal and Run All Cells" to ensure reproducibility.
+
 
 ## PyTest
 To confirm that functions run as intended run the following command on the terminal:
