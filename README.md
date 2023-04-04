@@ -6,7 +6,7 @@ Hyperthyroidism is an issue that occurs when the thyroid gland makes more thyroi
 
 ## Report
 The JupyterLab analysis for Milestone 1 can be found [here](https://github.com/erliuu/dsci-310-group-17/blob/main/analysis.ipynb) <br />
-The JupyerBook analysis for Milestone 3 can be found by running `make all` and is located at `dsci-310-group-17/jbook/_build/html/index.html`
+The JupyterBook analysis for Milestone 3 can be found by running `make all` and is located at `dsci-310-group-17/jbook/_build/html/index.html`
 
 ## Usage - Running with Docker
 1. Clone this GitHub repository onto your local computer.
