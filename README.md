@@ -10,7 +10,7 @@ The JupyterBook analysis for Milestone 3 can be found by running `make all` and 
 
 ## Usage - Running with Docker
 1. Clone this GitHub repository onto your local computer using the command: ```git clone <url>```
-2. Open your terminal and navigate to the root of this repository using the command ``` cd <folder name or path to project>```
+2. Open your terminal and navigate to the root of this repository using the command ```cd <folder name or path to project>```
 3. Ensure that Docker is installed on your computer and running. If not, follow the instructions [here](https://docs.docker.com/get-docker/).
 4. Run the following commands: 
 ```
