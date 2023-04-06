@@ -5,7 +5,8 @@ from clean_data import relabel_bclass, col_dtype_reformat
 
 def main(file_path, output_path):
     """
-    Function to read in data, cleans it, and 
+    Function to read in data, cleans it, and saves the resulting
+    DataFrame to a new CSV file at the specified output path.
     
     Parameters
     ----------
