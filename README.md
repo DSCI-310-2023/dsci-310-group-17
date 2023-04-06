@@ -9,9 +9,10 @@ The JupyterLab analysis for Milestone 1 can be found [here](https://github.com/e
 The JupyterBook analysis for Milestone 3 can be found by running `make all` and is located at `dsci-310-group-17/jbook/_build/html/index.html`
 
 ## Usage - Running with Docker
-1. Clone this GitHub repository onto your local computer.
+1. Clone this GitHub repository onto your local computer using the command: ```git clone <url>```
 2. Open your terminal and navigate to the root of this repository using the command ``` cd <folder name or path to project>```
-3. Run the following commands: 
+3. Ensure that Docker is installed on your computer and running. If not, follow the instructions [here](https://docs.docker.com/get-docker/).
+4. Run the following commands: 
 ```
 docker pull erliuu/dsci-310-group-17
 ```

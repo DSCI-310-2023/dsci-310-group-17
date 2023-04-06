@@ -20,7 +20,7 @@ def main(input_path, output_folder):
     ----------
     input_path: (string) -> path to clean data
 
-    output_path: (string) -> stores figures and CSVs to this file
+    output_folder: (string) -> path to output folder where figures and tables will be stored
     
     Returns
     ----------

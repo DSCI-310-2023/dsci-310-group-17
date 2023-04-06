@@ -39,6 +39,9 @@ def empty_plot():
     plt.scatter(pd.DataFrame(), pd.DataFrame(), c=np.empty(0), s=50, cmap='viridis')
     plt.xlabel("TSH concentration")
     plt.ylabel("TT4 concentration")
+    # Add a color bar to the plot
+    cb = plt.colorbar()
+    cb.set_label('Color Label')
     return fig
 
 def test_visualize_classification_keyerror():

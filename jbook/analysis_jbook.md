@@ -135,6 +135,3 @@ The model we trained has a 98% accuracy when tested on a test set. As we were pr
 +++ {"user_expressions": []}
 ```{bibliography}
 ```
-
-
-
