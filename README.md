@@ -55,6 +55,7 @@ Our list of dependencies with the package and version number can be found below:
 | seaborn | 0.12.2 |
 | jupyter-book  | 0.12.1 |
 | py-test  | 7.2.2 |
+| group17pkg  | 0.0.0 |
 
 ## Contributions
 For contribution guidelines, please refer to the guidlines listed in this document [here](https://github.com/DSCI-310/dsci-310-group-17/blob/main/CONTRIBUTING.md).
