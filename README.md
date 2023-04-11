@@ -56,9 +56,11 @@ Our list of dependencies with the package and version number can be found below:
 | jupyter-book  | 0.12.1 |
 | py-test  | 7.2.2 |
 
+## Contributions
+For contribution guidelines, please refer to the guidlines listed in this document [here](https://github.com/DSCI-310/dsci-310-group-17/blob/main/CONTRIBUTING.md).
+
 ## License
 This project uses the MIT license for its code and the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0) license for the analysis.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
 [![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC_BY--NC--ND_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
